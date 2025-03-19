@@ -1,0 +1,59 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-554,-570",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port UART -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD -left
+preplace port port-id_CLK100MHZ -pg 1 -lvl 0 -x 0 -y 190 -defaultsOSRD
+preplace port port-id_CPU_RESETN -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
+preplace inst source_50mhz -pg 1 -lvl 1 -x 140 -y 190 -defaultsOSRD -pinDir clk_in left -pinY clk_in 0L -pinDir resetn_in left -pinY resetn_in 20L -pinDir sys_clk right -pinY sys_clk 0R -pinBusDir sys_resetn right -pinBusY sys_resetn 20R
+preplace inst uart_axi_bridge -pg 1 -lvl 2 -x 400 -y 130 -defaultsOSRD -pinDir UART left -pinY UART 0L -pinDir M_AXI right -pinY M_AXI 0R -pinDir s_axi_aclk left -pinY s_axi_aclk 20L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 40L
+preplace inst system_interconnect -pg 1 -lvl 3 -x 680 -y 80 -defaultsOSRD -pinDir S00_AXI left -pinY S00_AXI 50L -pinDir M00_AXI right -pinY M00_AXI 0R -pinDir M01_AXI right -pinY M01_AXI 160R -pinDir aclk left -pinY aclk 140L -pinDir aresetn left -pinY aresetn 160L
+preplace inst axi_revision -pg 1 -lvl 4 -x 960 -y 80 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir AXI_ACLK left -pinY AXI_ACLK 20L -pinDir AXI_ARESETN left -pinY AXI_ARESETN 40L
+preplace inst axi_master -pg 1 -lvl 5 -x 1200 -y 140 -defaultsOSRD -pinDir M_AXI right -pinY M_AXI 0R -pinDir clk left -pinY clk 0L -pinDir resetn left -pinY resetn 40L -pinDir awvalid left -pinY awvalid 100L -pinDir wvalid left -pinY wvalid 120L -pinDir bready left -pinY bready 140L -pinDir arvalid left -pinY arvalid 160L -pinDir rready left -pinY rready 180L
+preplace inst axi_slave -pg 1 -lvl 6 -x 1500 -y 340 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinDir awready left -pinY awready 60L -pinDir wready left -pinY wready 80L -pinDir bvalid left -pinY bvalid 100L -pinDir arready left -pinY arready 120L -pinDir rvalid left -pinY rvalid 140L
+preplace inst control -pg 1 -lvl 4 -x 960 -y 240 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 80L -pinDir awvalid right -pinY awvalid 0R -pinDir wvalid right -pinY wvalid 20R -pinDir bready right -pinY bready 40R -pinDir arvalid right -pinY arvalid 60R -pinDir rready right -pinY rready 80R -pinDir awready right -pinY awready 160R -pinDir wready right -pinY wready 180R -pinDir bvalid right -pinY bvalid 200R -pinDir arready right -pinY arready 220R -pinDir rvalid right -pinY rvalid 240R
+preplace inst system_ila -pg 1 -lvl 6 -x 1500 -y 60 -defaultsOSRD -pinDir SLOT_0_AXI left -pinY SLOT_0_AXI 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinBusDir probe0 right -pinBusY probe0 20R -pinBusDir probe1 right -pinBusY probe1 40R
+preplace inst aximm_checker -pg 1 -lvl 6 -x 1500 -y 200 -defaultsOSRD -pinDir AXI left -pinY AXI 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinBusDir error_map right -pinBusY error_map 0R -pinDir error right -pinY error 20R
+preplace netloc clk_in1_0_1 1 0 1 NJ 190
+preplace netloc control_arready 1 4 2 NJ 460 N
+preplace netloc control_arvalid 1 4 1 N 300
+preplace netloc control_awready 1 4 2 NJ 400 N
+preplace netloc control_awvalid 1 4 1 N 240
+preplace netloc control_bready 1 4 1 N 280
+preplace netloc control_bvalid 1 4 2 NJ 440 N
+preplace netloc control_rready 1 4 1 N 320
+preplace netloc control_rvalid 1 4 2 NJ 480 N
+preplace netloc control_wready 1 4 2 NJ 420 N
+preplace netloc control_wvalid 1 4 1 N 260
+preplace netloc ext_reset_in_0_1 1 0 1 NJ 210
+preplace netloc source_100mhz_sys_clk 1 1 5 280 220 540 300 820 20 1080 80 1320
+preplace netloc source_100mhz_sys_resetn 1 1 5 260 240 520 320 840 180 1080 380 1340
+preplace netloc aximm_checker_error 1 6 1 1650 80n
+preplace netloc aximm_checker_error_map 1 6 1 1630 100n
+preplace netloc axi_master_M_AXI 1 5 1 1360 60n
+preplace netloc axi_uartlite_UART 1 0 2 NJ 130 NJ
+preplace netloc system_interconnect_M00_AXI 1 3 1 N 80
+preplace netloc system_interconnect_M01_AXI 1 3 1 N 240
+preplace netloc uart_axi_bridge_M_AXI 1 2 1 N 130
+levelinfo -pg 1 0 140 400 680 960 1200 1500 1670
+pagesize -pg 1 -db -bbox -sgen -150 0 1670 540
+",
+   "No Loops_ScaleFactor":"0.806291",
+   "No Loops_TopLeft":"-139,-153",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_CLK100MHZ -pg 1 -lvl 0 -x -10 -y -200 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 120 -y -200 -defaultsOSRD
+preplace netloc clk_in1_0_1 1 0 1 N -200
+levelinfo -pg 1 -10 120 240
+pagesize -pg 1 -db -bbox -sgen -150 -270 240 140
+"
+}
+{
+   "da_axi4_cnt":"1"
+}
